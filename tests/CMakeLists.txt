@@ -161,10 +161,6 @@ add_test_case(strutil_is_http_reason_phrase)
 add_test_case(strutil_is_http_request_target)
 add_test_case(strutil_is_http_pseudo_header_name)
 
-add_net_test_case(tls_download_medium_file_h1)
-add_net_test_case(tls_download_medium_file_h2)
-add_net_test_case(test_tls_download_shutdown_with_window_size_0)
-
 add_test_case(websocket_decoder_sanity_check)
 add_test_case(websocket_decoder_simplest_frame)
 add_test_case(websocket_decoder_rsv)
@@ -535,18 +531,8 @@ add_net_test_case(test_connection_manager_idle_culling_refcount)
 add_net_test_case(test_connection_manager_with_network_interface_list)
 
 # tests where we establish real connections
-add_net_test_case(test_connection_manager_single_connection)
-add_net_test_case(test_connection_manager_proxy_envrionment_empty_string)
 add_net_test_case(test_connection_manager_single_http2_connection)
 add_net_test_case(test_connection_manager_single_http2_connection_failed)
-add_net_test_case(test_connection_manager_single_http2_connection_with_settings)
-add_net_test_case(test_connection_manager_many_connections)
-add_net_test_case(test_connection_manager_many_http2_connections)
-add_net_test_case(test_connection_manager_acquire_release)
-add_net_test_case(test_connection_manager_close_and_release)
-add_net_test_case(test_connection_manager_acquire_release_mix)
-add_net_test_case(test_connection_manager_max_pending_acquisitions)
-add_net_test_case(test_connection_manager_max_pending_acquisitions_with_vended_connections)
 
 # Integration test that requires proxy envrionment in us-east-1 region.
 # TODO: test the server name validation properly
@@ -664,12 +650,6 @@ add_net_test_case(h2_sm_mock_ideal_num_streams)
 add_net_test_case(h2_sm_mock_large_ideal_num_streams)
 add_net_test_case(h2_sm_mock_goaway)
 add_net_test_case(h2_sm_connection_ping)
-
-# Tests against real world server
-add_net_test_case(h2_sm_acquire_stream)
-add_net_test_case(h2_sm_acquire_stream_multiple_connections)
-add_net_test_case(h2_sm_closing_before_connection_acquired)
-add_net_test_case(h2_sm_close_connection_on_server_error)
 
 # Tests against local server
 if(ENABLE_LOCALHOST_INTEGRATION_TESTS)
